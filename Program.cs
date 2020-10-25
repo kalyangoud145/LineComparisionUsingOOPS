@@ -19,14 +19,22 @@ namespace LineComparisionUsingOOPS
             double temp4 = lineComparisionImpl.GetEndPointsOfY();
             double result2 = lineComparisionImpl.DistanceBtwnPoints(temp3, temp4);
             Console.WriteLine("Distance between two points: " + result2);
-            bool checkLines = result1.Equals(result2);
-            if (checkLines == true)
+            //Comparing the distances of two lines
+            //the result gives 0 if both are equal and -1 if first one is less than second
+            //+1 if first one is greater than second one 
+            int compare = result1.CompareTo(result2);
+
+            if (compare == 0)
             {
-                Console.WriteLine("Both lines are equal");
+                Console.WriteLine("Lines are equal");
+            }
+            else if (compare == -1)
+            {
+                Console.WriteLine("First line is less than second line");
             }
             else
             {
-                Console.WriteLine("lines are not equal");
+                Console.WriteLine("First line is greater than second line");
             }
         }
     }
